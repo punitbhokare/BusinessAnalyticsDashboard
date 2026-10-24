@@ -7,39 +7,50 @@
 
     <title>Business Analytics Dashboard</title>
 
-    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+    <!-- Dashboard styling -->
+    <link rel="stylesheet" href="/static/style.css">
 
-    <link rel="stylesheet" href="/style.css">
+    <!-- Plotly charts library -->
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
 </head>
 
 <body>
+
     <header>
         <h1>Business Analytics Dashboard</h1>
         <p>Analyze your business performance</p>
     </header>
 
     <main>
+
+        <!-- CSV Upload Section -->
         <section class="upload-box">
             <h2>Upload Sales Dataset</h2>
             <p>Select your business sales CSV file below.</p>
 
             <div class="upload-controls">
                 <input type="file" id="csvFile" accept=".csv">
-                <button type="button" onclick="uploadFile()">Upload CSV</button>
+                <button type="button" onclick="uploadFile()">
+                    Upload CSV
+                </button>
             </div>
 
-            <p id="message" role="status">No dataset uploaded yet.</p>
+            <p id="message" role="status">
+                No dataset uploaded yet.
+            </p>
         </section>
 
+        <!-- Business KPI Cards -->
         <section class="kpi-container">
+
             <div class="kpi-card">
                 <h3>Total Sales</h3>
-                <p id="sales">₹0</p>
+                <p id="sales">$0</p>
             </div>
 
             <div class="kpi-card">
                 <h3>Total Profit</h3>
-                <p id="profit">₹0</p>
+                <p id="profit">$0</p>
             </div>
 
             <div class="kpi-card">
@@ -49,11 +60,14 @@
 
             <div class="kpi-card">
                 <h3>Average Order Value</h3>
-                <p id="average">₹0</p>
+                <p id="average">$0</p>
             </div>
+
         </section>
 
+        <!-- Dashboard Charts -->
         <section class="charts">
+
             <div class="chart-box">
                 <div id="salesChart"></div>
             </div>
@@ -61,10 +75,16 @@
             <div class="chart-box">
                 <div id="categoryChart"></div>
             </div>
+
         </section>
+
     </main>
 
+    <!-- CSV reading library -->
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
-    <script src="/script.js"></script>
+
+    <!-- Dashboard functionality -->
+    <script src="/static/script.js"></script>
+
 </body>
 </html>
